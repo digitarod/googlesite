@@ -29,6 +29,9 @@
           // 日付をフォーマットしてセルに設定
           dateCell.textContent = formatDate(item.date);
 
+          var captionCell = document.createElement('td');
+          captionCell.textContent = item.caption;
+
           var linkCell = document.createElement('td');
           if (item.link) {
             var link = document.createElement('a');
