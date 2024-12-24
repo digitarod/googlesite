@@ -26,7 +26,13 @@
           var row = document.createElement('tr');
 
           var dateCell = document.createElement('td');
-          dateCell.textContent = item.date;
+          var date = new Date(item.date); // item.date を Date オブジェクトに変換
+
+          // 日付を YYYY/MM/DD フォーマットにする
+          var formattedDate = date.getFullYear() + '/' + 
+                              String(date.getMonth() + 1).padStart(2, '0') + '/' + 
+                              String(date.getDate()).padStart(2, '0');
+          dateCell.textContent = formattedDate;
 
           var captionCell = document.createElement('td');
           captionCell.textContent = item.caption;
