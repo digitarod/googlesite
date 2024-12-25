@@ -16,7 +16,7 @@
   </table>
 
   <script>
-    fetch('https://script.google.com/macros/s/AKfycbxmOM3I0CtfFCpdvHG6F8Kg3_Jm2QvVPb7ROL-pUiobLQsCyJaw3dMXjilZZmXlVlT9xw/exec')
+    fetch('https://script.google.com/macros/s/AKfycbxV3uTFTo140ItzTrg3W2jUvXQDn6mSmOF0DiK43KSOltQBFUwlOLziVDTOKepDnqoOuQ/exec')
       .then(response => response.json())
       .then(data => {
         var dataTable = document.getElementById('data-table');
@@ -45,13 +45,13 @@
           }
           
           // 日付をフォーマットしてセルに設定
-          dateCell.textContent = formatDate(item.date);
+          dateCell.textContent = formatDate(item.header1);
 
           var captionCell = document.createElement('td');
-          captionCell.textContent = item.caption;
+          captionCell.textContent = item.header2;
 
           var linkCell = document.createElement('td');
-          if (item.link) {
+          if (item.header3) {
             var link = document.createElement('a');
             link.href = item.link;
             link.textContent = '詳細';
